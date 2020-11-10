@@ -1,0 +1,95 @@
+%---------------------------------------Pakete-----------------------------------------
+\documentclass[a4paper, 11pt, fleqn, captions=nooneline]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareMathOperator{\sinc}{si}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[nice]{nicefrac}
+\usepackage{units}
+\usepackage{geometry}
+\usepackage{appendix}
+\usepackage[font=footnotesize,labelfont=bf,labelformat=default]{caption}
+\usepackage{float}
+\usepackage{newfloat}
+\usepackage{hyperref}
+\usepackage[ngerman]{cleveref}
+\usepackage{listings}
+\usepackage{booktabs}
+
+\setlength{\parindent}{0pt} % no indentation
+
+% \usepackage[outputdir=.texpadtmp]{minted}
+% \usepackage{color}
+\usepackage{matlab-prettifier}
+\lstset{style=Matlab-editor, captionpos=b}
+
+
+\DeclareFloatingEnvironment[fileext=equ,placement={!ht},name=Gleichung]{Gleichung}
+\captionsetup[Gleichung]{labelfont=bf}
+
+\renewcommand*{\*}{\cdot}
+
+%--------------Längen/Konventionen--------------------
+\setlength{\mathindent}{5pt}
+\setlength\jot{0,5cm}
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+\renewcaptionname{ngerman}{\tablename}{Tab.}
+\crefname{lstlisting}{Script}{listings}
+\Crefname{lstlisting}{Script}{Listings}
+\renewcommand{\lstlistingname}{Script}
+\renewcommand{\familydefault}{\sfdefault}
+
+%--------------Lokale Variablen--------------------
+\newcommand{\thetitle}{Digitale Systeme und CAE \\ Bericht zur Projekaufgabe}
+\newcommand{\theauhors}{Lukas Güldenstein, 887986}
+
+%--------------Literatur--------------------
+%\usepackage[backend=bibtex, style=authortitle-ibid, bibstyle=authortitle]{biblatex}
+%\bibliography{IPL_Weiche_bib.bib}
+
+%\setlength{\bibitemsep}{2em}     % Abstand zwischen den Literaturangaben
+%\setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
+
+%--------------Design/Geometrie--------------------
+\pagestyle{fancy}
+\geometry{top=30mm, left=20mm, right=20mm, bottom=30mm}
+\setlength{\headwidth}{175mm}
+
+\lhead{\includegraphics[height=0.8cm]{Grafiken/Beuth_Logo_horizontal.png}}
+\chead{\thetitle}
+\rhead{\today}
+\lfoot{\footnotesize{Lukas Güldenstein, 887986}}
+\cfoot{}
+\rfoot[Seite \thepage\ von \pageref{LastPage}]{Seite \thepage \ von \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%--------------Dokument Anfang, Deckblatt Inhaltsverzeichnis--------------------
+\begin{document}
+\title{\includegraphics[width=10cm]{Grafiken/Beuth_Logo_horizontal}
+		\vspace{1cm}\\ \thetitle}
+\author{\theauhors}
+
+\maketitle
+\begin{center}
+	Dozent: Prof. Andre Jakob
+\end{center}
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+\section{Aufgabenbeschreibung}
+\section{Systemdesign}
+\section{Leiterplatte}
+\section{FPGA-Programmierung}
+
+\end{document}
